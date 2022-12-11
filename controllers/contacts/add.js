@@ -1,12 +1,8 @@
-const { addContact } = require('../../models/contacts');
-
-const { v4 } = require('uuid');
+const { Contact } = require('../../models/contacts');
 
 const add = async (req, res) => {
   const { body } = req;
-  const id = v4();
-  body.id = id;
-  const newContact = await addContact(body);
+  const newContact = await Contact.create(body);
   res.status(201).json(newContact);
 };
 
