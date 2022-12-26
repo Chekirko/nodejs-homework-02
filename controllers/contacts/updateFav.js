@@ -1,4 +1,4 @@
-const { Contact } = require('../../models/contacts');
+const { Contact } = require('../../models');
 
 const updateFav = async (req, res) => {
   const { body } = req;
